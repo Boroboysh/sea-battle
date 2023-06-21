@@ -16,6 +16,7 @@ export class GameField {
             this.gameField.push(rows)
         }
 
+
         this.addShipsToField(ships)
     }
 
@@ -24,9 +25,17 @@ export class GameField {
         ships.forEach(ship => {
             for (let i = 0; i < ship.ship_count; i++) {
                 let res = false;
+                let counter = 0;
 
                 while (!res) {
+                    if (counter >= 50) {
+                        // console.log('Error: Бессконечный цикл')
+
+                        res = true;
+                        break;
+                    }
                     res = this.setShip(ship.cells);
+                    counter += 1;
                 }
                 this.shipCellsAlive += ship.cells;
             }
@@ -97,9 +106,11 @@ export class GameField {
     }
 
     isInvalidCell(x, y) {
+        // console.log(`res = ${res}`)
+
         return (x >= 0 && x < this.gameField.length &&
-                y >= 0 && y < this.gameField.length &&
-                this.gameField[y][x] !== 0);
+            y >= 0 && y < this.gameField.length &&
+            this.gameField[y][x] !== 0)
     }
 
     isVertical() {

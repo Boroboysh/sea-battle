@@ -29,15 +29,15 @@ let startGame = () => {
     let ai2 = new AI_2(field_size, ships);
 
     for (let i = 0; i < Math.pow(field_size, 2); i++) {
-        const ai1Move = ai1.makeShot();
-        const isAi2Dead = ai2.getShot(ai1Move)
+        const ai1Move = ai1.takeShot();
+        const isAi2Dead = ai2.getShot(ai1Move);
 
         if (isAi2Dead) {
             ai1Wins++;
             break;
         }
 
-        const ai2Move = ai2.makeShot();
+        const ai2Move = ai2.takeShot();
         const isAi1Dead = ai1.getShot(ai2Move)
 
         if (isAi1Dead) {
@@ -47,8 +47,7 @@ let startGame = () => {
     }
 }
 
-
-for (let countGame = 0; countGame < 3; countGame++) {
+for (let countGame = 0; countGame < 1000; countGame++) {
     startGame();
 }
 
