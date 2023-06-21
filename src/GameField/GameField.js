@@ -16,7 +16,6 @@ export class GameField {
             this.gameField.push(rows)
         }
 
-
         this.addShipsToField(ships)
     }
 
@@ -106,8 +105,6 @@ export class GameField {
     }
 
     isInvalidCell(x, y) {
-        // console.log(`res = ${res}`)
-
         return (x >= 0 && x < this.gameField.length &&
             y >= 0 && y < this.gameField.length &&
             this.gameField[y][x] !== 0)

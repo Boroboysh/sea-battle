@@ -11,8 +11,7 @@ export class AI_2 extends Player {
 
         let lineSteps = this.gameField.length;
         let currentPosition = {
-            x: 0,
-            y: this.gameField.length - 1
+            x: 0, y: this.gameField.length - 1
         }
 
         // Идет построение ходов, от конца (крайний левый нижний угол) к середине поля
@@ -30,8 +29,7 @@ export class AI_2 extends Player {
                             } else x++;
 
                             this.moves.push({
-                                x: x,
-                                y: currentPosition.y
+                                x: x, y: currentPosition.y
                             })
                         }
 
@@ -46,8 +44,7 @@ export class AI_2 extends Player {
                             yStageOne--;
 
                             this.moves.push({
-                                x: currentPosition.x,
-                                y: yStageOne
+                                x: currentPosition.x, y: yStageOne
                             })
                         }
 
@@ -61,8 +58,7 @@ export class AI_2 extends Player {
                             xStageTwo--;
 
                             this.moves.push({
-                                x: xStageTwo,
-                                y: currentPosition.y
+                                x: xStageTwo, y: currentPosition.y
                             })
                         }
 
@@ -78,8 +74,7 @@ export class AI_2 extends Player {
                             yStageThree++;
 
                             this.moves.push({
-                                x: xStageThree,
-                                y: yStageThree
+                                x: xStageThree, y: yStageThree
                             })
                         }
 

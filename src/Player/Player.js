@@ -40,7 +40,7 @@ export class Player {
 
     generateRandomCoordinate() {
         let coordinate = Math.round(Math.random() * (this.gameField.length - 1));
-        if (!(coordinate >= 0 )) return this.generateRandomCoordinate()
-            else return coordinate
+        if (!(coordinate >= 0)) return this.generateRandomCoordinate()
+        else return coordinate
     }
 }
